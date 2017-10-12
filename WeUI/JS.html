@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<!--
+			HTML5动画特效:
+			http://www.atool.org/ 
+			http://www.html5tricks.com/demo/jiaoben1467/index.html
+			http://www.html5tricks.com/demo/html5-whale/index.html
+			http://www.html5tricks.com/10-wonderful-html5-animation.html
+			http://www.html5tricks.com/demo/html5-canvas-particle-effect/index.html
+		-->
+		<style type="text/css">
+			#wrap {
+				width: 500px;
+				height: 500px;
+				background: red;
+				position: absolute;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+			}
+			
+			#outer {
+				width: 300px;
+				height: 300px;
+				background: cyan;
+				position: absolute;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+			}
+			
+			#inner {
+				width: 150px;
+				height: 150px;
+				background: limegreen;
+				position: absolute;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+			}
+			
+			input {
+				border: none;
+				width: 3rem;
+				height: 3rem;
+				background: cyan;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--<div id="wrap">
+			<div id="outer">
+				<div id="inner">
+
+				</div>
+			</div>
+		</div>-->
+		<!--<ul id="list">
+			<li>item 1</li>
+			<li>item 2</li>
+			<li>item 3</li>
+			<li>item 4</li>
+			<li>item 5</li>
+			<li>item 6</li>
+			<li>item 7</li>
+			<li>item 8</li>
+		</ul>-->
+		<div>
+			<div>
+				<div>
+					<div>
+						<input type="checkbox" class="int" />
+					</div>
+					<div>
+						<p class="lis">1号铺</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div>
+				<div>
+					<div>
+						<input type="checkbox" class="int" />
+					</div>
+					<div>
+						<p class="lis">1号铺</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div>
+				<div>
+					<div>
+						<input type="checkbox" class="int" />
+						<laber></laber>
+					</div>
+					<div>
+						<p class="lis">1号铺</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<div>
+				<div>
+					<div>
+						<input type="checkbox" class="int" />
+					</div>
+					<div>
+						<p class="lis">1号铺</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<input type="checkbox" id="list" />
+			<input type="checkbox" />
+			<input type="checkbox" />
+			<input type="checkbox" />
+			<input type="checkbox" />
+			<input type="checkbox" />
+			<input type="checkbox" />
+			<input type="checkbox" />
+		</div>
+	</body>
+	<script src="js/jquery.3.1.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		/*//绑定事件
+		var wrap = document.getElementById('wrap');
+		var outet = document.getElementById('outer');
+		var inner = document.getElementById('inner');
+
+		wrap.addEventListener('click', function() {
+			console.log('789');
+		}, false);
+		outer.addEventListener('click', function() {
+			console.log('456');
+		}, false);
+		inner.addEventListener('click', function() {
+			console.log('inner');
+		}, true);
+		inner.addEventListener('click', function() {
+			console.log('123');
+		}, false);
+		wrap.addEventListener('click', function() {
+			console.log('wrap');
+		}, true);
+		outer.addEventListener('click', function() {
+			console.log('outer');
+		}, true);*/
+
+		/*//事件代理
+		var list = document.getElementById("list");
+
+		list.addEventListener("click", function(e) {
+			//检查事件源，事件是否为li
+			if(e.target && e.target.nodeName.toLowerCase() == "li") {
+				console.log(e.target.innerHTML);
+			}
+		})*/
+
+		//单例模式
+		//		var a = 45;
+		//		var obj = {} || a;
+		//		
+		//工厂模式
+		/*function createObj(name, age) {
+			var obj = new Object();
+			obj.name = name;
+			obj.age = age;
+			obj.say = function() {
+				console.log(obj.name + " => " + obj.age);
+			}
+			return obj
+		}
+
+		var son = new createObj("Lee", 28);
+		var yy = new createObj("Yin", 19);
+		son.say();
+		yy.say();
+		var aa = function(){
+			return
+		}
+		console.log(aa());
+		*/
+
+		//冒泡排序
+		var yin = [2, 3, 5, 13, 9, 0];
+		for(var i = 0; i < yin.length - 1; i++) {
+			for(var j = i + 1; j < yin.length; j++) {
+				if(yin[j] < yin[i]) {
+					var temp = yin[i];
+					yin[i] = yin[j];
+					yin[j] = temp;
+				}
+			}
+		}
+		console.log(yin);
+		/*//快速排序
+		 */
+		/*//浅复制
+		var obj = {a : 1,arr:[1,2]};
+		console.log(obj);
+		var Copy = shawCopy(obj);
+		console.log("------------------");
+		function shawCopy(src)
+		{
+			var Obj = {};
+			for(var prop in src)
+			{
+				if(src.hasOwnProperty(prop))
+				{
+					Obj[prop] = src[prop];
+				}
+			}
+			return Obj;
+		}
+		console.log(Copy.arr[1]);
+		console.log(obj.arr[1]);*/
+		/*//深复制
+		var china = {
+			nation: '中国',
+			birthplaces: ['北京', '上海', '广州'],
+			skincolr: 'yellow',
+			friends: ['sk', 'ls']
+		}
+		console.log(china);
+		//深复制，要想达到深复制就需要用递归
+		function deepCopy(o, c) {
+			var c = c || {};
+			for(var i in o) {
+				if(typeof o[i] === 'object') {
+					//要考虑深复制问题了
+					if(o[i].constructor === Array) {
+						//这是数组
+						c[i] = [];
+					} else {
+						//这是对象
+						c[i] = {};
+					}
+					deepCopy(o[i], c[i])
+				} else {
+					c[i] = o[i];
+				}
+			}
+			return c
+		}
+		var result = {}
+		result = deepCopy(china, result);
+		console.log(result);*/
+		
+		//原生ajax
+		function createRequest(){
+			//创建XMLHTTPRequest
+			var req = createXMLHTTPRequest();
+			if(req)
+			{
+				req.open("POST","",true);
+				req.setRequestHeader("Content-Type","");
+				req.send();
+				req.onreadystatechange = function(){
+					if(req.readyState == 4)
+					{
+						if(req.status == 200)
+						{
+							console.log("成功");
+						}else{
+							console.log("失败");
+						}
+					}
+				}
+			}
+		}
+
+	</script>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<!--优先使用IE最新版本和Chrome-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chome=1" />
+		<!--视口--设备宽度--初始缩放比例--最小缩放比例--最大缩放比例--用户缩放-->
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<!--禁止浏览器自动的识别-电话号码-email--->
+		<meta name="format-detection" content="telephone=no,email=no" />
+		<!--是否启用Web全屏-->
+		<meta name="apple-mobile-web-app-capable" content='yes' />
+		<meta name="apple-mobile-web-status-bar-style" content="normal|black|black-translucent">
+		<!--设置苹果工具栏颜色-->
+		<meta name="apple-mobile-web-app-status-bar-style" content='black' />
+
+		<title></title>
+	</head>
+
+	<body>
+		<input type="text" id='datetime-picker' />
+		<div class="weui-loadmore">
+			<i class="weui-loading"></i>
+			<span class="weui-loadmore__tips">正在加载...</span>
+		</div>
+	</body>
+	<script>
+		$("#datetime-picker").datetimePicker();
+		$(document.body).infinite();
+		$(document.body).infinite(100);
+		var loading = false; //状态标记
+		$(document.body).infinite().on("infinite", function() {
+			if(loading) return;
+			loading = true;
+			setTimeout(function() {
+				$("#list").append("<p> 我是新加载的内容 </p>");
+				loading = false;
+			}, 1500); //模拟延迟
+		});
+	</script>
+
+</html>
